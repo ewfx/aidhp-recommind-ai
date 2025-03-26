@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, Legend } from "recharts";
 
 // Mock data for Product Performance
@@ -31,21 +31,29 @@ const revenueTrendsData = [
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28"];
 
-const AnalyticsDashboard = () => {
+const AnalyticsDashboard: React.FC = () => {
   const formatCurrency = (value: number) => {
     return `$${value.toLocaleString()}`;
   };
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-8">Analytics Dashboard</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold">Analytics Dashboard</h1>
+        <div className="flex items-center gap-4">
+          <div className="rounded-md bg-blue-50 p-2 text-blue-700">
+            <span className="font-semibold">Total Customers: </span>
+            <span className="text-xl font-bold">2,847</span>
+          </div>
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
         {/* Product Performance Chart */}
         <Card>
           <CardHeader>
             <CardTitle>Product Performance</CardTitle>
-            <p className="text-sm text-muted-foreground">Monthly product adoption rates</p>
+            <CardDescription>Monthly product adoption rates</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-[300px] w-full">
@@ -67,7 +75,7 @@ const AnalyticsDashboard = () => {
         <Card>
           <CardHeader>
             <CardTitle>Customer Segmentation</CardTitle>
-            <p className="text-sm text-muted-foreground">Distribution of customer segments</p>
+            <CardDescription>Distribution of customer segments</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-[300px] w-full">
@@ -90,7 +98,7 @@ const AnalyticsDashboard = () => {
         <Card>
           <CardHeader>
             <CardTitle>Revenue Trends</CardTitle>
-            <p className="text-sm text-muted-foreground">Monthly revenue analysis</p>
+            <CardDescription>Monthly revenue analysis</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="h-[300px] w-full">
@@ -112,7 +120,7 @@ const AnalyticsDashboard = () => {
         <Card>
           <CardHeader>
             <CardTitle>Customer Health Score</CardTitle>
-            <p className="text-sm text-muted-foreground">Distribution of customer health scores</p>
+            <CardDescription>Distribution of customer health scores</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">

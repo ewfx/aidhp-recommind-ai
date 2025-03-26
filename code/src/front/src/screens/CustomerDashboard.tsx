@@ -5,7 +5,7 @@ import { ArrowUp, ArrowDown, AlertCircle, TrendingUp, Clock, DollarSign, CreditC
 
 const CustomerDashboard = () => {
   return (
-    <div className="p-6 max-w-6xl mx-auto">
+    <div>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Welcome, Michael!</h1>
         <div className="rounded-md bg-blue-50 p-2 text-blue-700 flex items-center">

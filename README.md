@@ -1,54 +1,120 @@
-# 🚀 RecomMind AI
+# 🚀 RecomMind AI: Hyper-Personalized Banking Recommendations
 
-RecomMind AI
+## 🎯 Project Overview
 
-## 📌 Table of Contents
-- [Introduction](#introduction)
-- [Demo](#demo)
-- [Inspiration](#inspiration)
-- [What It Does](#what-it-does)
-- [How We Built It](#how-we-built-it)
-- [Challenges We Faced](#challenges-we-faced)
-- [How to Run](#how-to-run)
-- [Tech Stack](#tech-stack)
-- [Team](#team)
+RecomMind AI is an innovative AI-driven solution that transforms banking experiences through hyper-personalized financial recommendations, addressing critical challenges in traditional banking systems.
+
+## 💡 Problem Statement
+
+Banks struggle with:
+
+- Generic financial product recommendations
+- Inability to anticipate customer needs
+- Poor offer timing
+- High customer acquisition costs
+- Complex personalization compliance
+
+## ✨ Key Features
+
+- 🧠 AI-Powered Financial Health Assessment
+- 🎯 Personalized Product Recommendations
+- 🚨 Life Event Detection
+- 📊 Relationship Manager Enablement
+
+## 🖼️ Project Screenshots
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="./artifacts/screenshots/main_landing_page.png" width="250" alt="Main Landing Page">
+    <img src="./artifacts/screenshots/main_landing_page_2.png" width="250" alt="Main Landing Page 2">
+    <img src="./artifacts/screenshots/data-upload_2.png" width="250" alt="Data Upload">
+    <img src="./artifacts/screenshots/rm-dashboard.png" width="250" alt="RM Dashboard">
+    <img src="./artifacts/screenshots/analytics_dashboard.png" width="250" alt="Analytics Dashboard">
+    <img src="./artifacts/screenshots/customer_dash_1.png" width="250" alt="Customer Dashboard">
+    <img src="./artifacts/screenshots/customer_dash_2.png" width="250" alt="Customer Dashboard 2">
+</div>
+
+## 🏗️ System Architecture
+
+![Architecture Diagram](./artifacts/screenshots/architecture.svg) ![User Flow](./artifacts/screenshots/user_flow.svg)
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React
+- Shadcn/UI
+- Tailwind CSS
+
+### Backend
+
+- FastAPI
+- PostgreSQL
+- Python Data Science Libraries
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js (v16+)
+- Python (v3.9+)
+- PostgreSQL (v13+)
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/recommind-ai.git
+cd recommind-ai
+```
+
+2. Setup Backend
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+3. Setup Frontend
+
+```bash
+cd frontend
+npm install
+npm run start
+```
+
+## 💡 Key Innovations
+
+- Adaptive Recommendation Engine
+- Life Event Detection
+- Financial Health Scoring
+- Personalized Banking Experience
+
+## 📊 Key Metrics
+
+- Financial Health Score Calculation
+- Customer Segmentation
+- Personalization Accuracy
+- Recommendation Conversion Rate
+
+## 🔮 Future Roadmap
+
+- Enhanced ML Models
+- Real-time Recommendation Updates
+- Advanced Sentiment Analysis
+- Multi-modal Personalization
+
+## 👥 Team
+
+- **Bhagya Rana** - Project Lead
+  - [GitHub](https://github.com/BhagyaRana)
+  - [LinkedIn](https://www.linkedin.com/in/bhagyarana)
+
+## 📄 Demo
+
+- [Project Video Demo](https://drive.google.com/drive/folders/1viL_W_U4-pkYKNnHKzwdFctzSS0f3FnY?usp=sharing)
 
 ---
 
-## 🎯 Introduction
-
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
-
-## 🎥 Demo
-
-🔗 [Live Demo](#) (if applicable)  
-
-📹 [Video Demo](#) (if applicable)  
-
-🖼️ Screenshots:
-
-![Screenshot 1](link-to-image)
-
-## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
-
-## ⚙️ What It Does
-Explain the key features and functionalities of your project.
-
-## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
-
-## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
-
-## 🏃 How to Run
-
-
-
-## 🏗️ Tech Stack
-- 🔹 Frontend: React
-- 🔹 Backend: FastAPI
-- 🔹 Database: PostgreSQL
-
-## 👥 Team
-- **Bhagya Rana** - [GitHub](https://github.com/BhagyaRana) | [LinkedIn](https://www.linkedin.com/in/bhagyarana)
+**Built with ❤️ for Banking Innovation**

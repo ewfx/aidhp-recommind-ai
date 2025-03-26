@@ -1,25 +1,65 @@
-import { useState } from 'react'
-import './App.css'
-import { Button } from "@/components/ui/button"
-import React from 'react';
-import { Toaster } from "@/components/ui/sonner"
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import DataUploadPage from './pages/DataUpload';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import DataUpload from "./pages/DataUpload";
+import CustomerDashboard from "./screens/CustomerDashboard";
+import AnalyticsDashboard from "./screens/AnalyticsDashboard";
+import RMDashboard from "./screens/RMDashboard";
+import Navigation from "./components/Navigation";
+import Layout from "./components/Layout";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App: React.FC = () => {
   return (
     <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<DataUploadPage />} />
-          {/* Add other routes */}
-        </Routes>
-        <Toaster />
+      <div className="flex min-h-screen flex-col">
+        <Navigation />
+        <main className="flex-1">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Layout fullWidth>
+                  <LandingPage />
+                </Layout>
+              }
+            />
+            <Route
+              path="/data-upload"
+              element={
+                <Layout>
+                  <DataUpload />
+                </Layout>
+              }
+            />
+            <Route
+              path="/customer-dashboard"
+              element={
+                <Layout>
+                  <CustomerDashboard />
+                </Layout>
+              }
+            />
+            <Route
+              path="/analytics-dashboard"
+              element={
+                <Layout>
+                  <AnalyticsDashboard />
+                </Layout>
+              }
+            />
+            <Route
+              path="/rm-dashboard"
+              element={
+                <Layout>
+                  <RMDashboard />
+                </Layout>
+              }
+            />
+          </Routes>
+        </main>
       </div>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;
