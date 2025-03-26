@@ -24,13 +24,13 @@ Banks struggle with:
 ## 🖼️ Project Screenshots
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="./artifacts/screenshots/main_landing_page.png" width="250" alt="Main Landing Page">
-    <img src="./artifacts/screenshots/main_landing_page_2.png" width="250" alt="Main Landing Page 2">
-    <img src="./artifacts/screenshots/data-upload_2.png" width="250" alt="Data Upload">
-    <img src="./artifacts/screenshots/rm-dashboard.png" width="250" alt="RM Dashboard">
-    <img src="./artifacts/screenshots/analytics_dashboard.png" width="250" alt="Analytics Dashboard">
-    <img src="./artifacts/screenshots/customer_dash_1.png" width="250" alt="Customer Dashboard">
-    <img src="./artifacts/screenshots/customer_dash_2.png" width="250" alt="Customer Dashboard 2">
+    <img src="./artifacts/screenshots/main_landing_page.png" width="1000" alt="Main Landing Page">
+    <img src="./artifacts/screenshots/main_landing_page_2.png" width="1000" alt="Main Landing Page 2">
+    <img src="./artifacts/screenshots/data-upload_2.png" width="1000" alt="Data Upload">
+    <img src="./artifacts/screenshots/rm-dashboard.png" width="1000" alt="RM Dashboard">
+    <img src="./artifacts/screenshots/analytics_dashboard.png" width="1000" alt="Analytics Dashboard">
+    <img src="./artifacts/screenshots/customer_dash_1.png" width="1000" alt="Customer Dashboard">
+    <img src="./artifacts/screenshots/customer_dash_2.png" width="1000" alt="Customer Dashboard 2">
 </div>
 
 ## 🏗️ System Architecture
