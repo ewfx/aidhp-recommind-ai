@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# 🚀 RecomMind AI
 
 RecomMind AI
 

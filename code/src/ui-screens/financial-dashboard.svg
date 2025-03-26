@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#F5F7FA"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="70" fill="#0066CC"/>
+  <text x="30" y="45" font-family="Arial" font-size="24" font-weight="bold" fill="white">RecomMind AI</text>
+  
+  <!-- User profile area -->
+  <circle cx="1140" cy="35" r="25" fill="#FFFFFF"/>
+  <text x="1140" y="42" font-family="Arial" font-size="20" text-anchor="middle" fill="#0066CC">SJ</text>
+  <text x="1070" y="42" font-family="Arial" font-size="16" fill="white">Sarah Johnson</text>
+  
+  <!-- Left Navigation -->
+  <rect x="0" y="70" width="220" height="730" fill="#FFFFFF"/>
+  <rect x="0" y="240" width="220" height="50" fill="#E6F0FF"/>
+  <rect x="0" y="240" width="5" height="50" fill="#0066CC"/>
+  
+  <!-- Navigation items -->
+  <text x="20" y="120" font-family="Arial" font-size="16" fill="#666666">MENU</text>
+  <text x="30" y="173" font-family="Arial" font-size="16" fill="#666666">Dashboard</text>
+  <text x="30" y="223" font-family="Arial" font-size="16" fill="#666666">Accounts</text>
+  <text x="30" y="273" font-family="Arial" font-size="16" font-weight="bold" fill="#0066CC">Financial Health</text>
+  <text x="30" y="323" font-family="Arial" font-size="16" fill="#666666">Products</text>
+  <text x="30" y="373" font-family="Arial" font-size="16" fill="#666666">Transactions</text>
+  <text x="30" y="423" font-family="Arial" font-size="16" fill="#666666">Goals</text>
+  <text x="30" y="473" font-family="Arial" font-size="16" fill="#666666">Settings</text>
+  
+  <!-- Page Title -->
+  <text x="250" y="110" font-family="Arial" font-size="24" font-weight="bold" fill="#333333">Financial Health Dashboard</text>
+  <text x="250" y="140" font-family="Arial" font-size="16" fill="#666666">A comprehensive view of your financial well-being and recommendations</text>
+  
+  <!-- Health Score Section -->
+  <rect x="250" y="170" width="440" height="260" rx="10" ry="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="280" y="210" font-family="Arial" font-size="20" font-weight="bold" fill="#333333">Your Financial Health Score</text>
+  
+  <!-- Health Score circle -->
+  <circle cx="380" cy="300" r="80" fill="none" stroke="#E0E0E0" stroke-width="10"/>
+  <path d="M 380 220 A 80 80 0 0 1 457 323" fill="none" stroke="#4CAF50" stroke-width="10"/>
+  <text x="380" y="290" font-family="Arial" font-size="36" font-weight="bold" text-anchor="middle" fill="#333333">78</text>
+  <text x="380" y="320" font-family="Arial" font-size="16" text-anchor="middle" fill="#666666">Health Score</text>
+  
+  <!-- Score trends -->
+  <text x="520" y="250" font-family="Arial" font-size="16" fill="#666666">Monthly Trend</text>
+  
+  <!-- Simple line chart -->
+  <polyline points="520,300 540,290 560,310 580,300 600,280 620,260 640,250" fill="none" stroke="#4CAF50" stroke-width="2"/>
+  <!-- X-axis -->
+  <line x1="520" y1="320" x2="640" y2="320" stroke="#666666" stroke-width="1"/>
+  <!-- Y-axis -->
+  <line x1="520" y1="320" x2="520" y2="250" stroke="#666666" stroke-width="1"/>
+  <!-- Axis labels -->
+  <text x="580" y="340" font-family="Arial" font-size="12" text-anchor="middle" fill="#666666">Last 6 Months</text>
+  
+  <!-- Credit Score Section -->
+  <rect x="710" y="170" width="440" height="260" rx="10" ry="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="740" y="210" font-family="Arial" font-size="20" font-weight="bold" fill="#333333">Credit Profile</text>
+  
+  <!-- Credit Score -->
+  <text x="740" y="250" font-family="Arial" font-size="16" fill="#666666">Credit Score</text>
+  <text x="740" y="280" font-family="Arial" font-size="36" font-weight="bold" fill="#333333">728</text>
+  <text x="850" y="280" font-family="Arial" font-size="16" fill="#4CAF50">Good</text>
+  
+  <!-- Credit Score Meter -->
+  <rect x="740" y="300" width="380" height="10" rx="5" ry="5" fill="#E0E0E0"/>
+  <rect x="740" y="300" width="290" height="10" rx="5" ry="5" fill="#4CAF50"/>
+  
+  <!-- Credit Score Range Labels -->
+  <text x="740" y="330" font-family="Arial" font-size="12" fill="#666666">300</text>
+  <text x="930" y="330" font-family="Arial" font-size="12" text-anchor="middle" fill="#666666">700</text>
+  <text x="1120" y="330" font-family="Arial" font-size="12" text-anchor="end" fill="#666666">850</text>
+  
+  <!-- Credit Score Factors -->
+  <text x="740" y="360" font-family="Arial" font-size="16" fill="#666666">Key Factors</text>
+  <circle cx="750" cy="380" r="5" fill="#4CAF50"/>
+  <text x="765" y="385" font-family="Arial" font-size="14" fill="#333333">On-time payment history</text>
+  <circle cx="750" cy="405" r="5" fill="#FF9800"/>
+  <text x="765" y="410" font-family="Arial" font-size="14" fill="#333333">High credit utilization (34%)</text>
+  
+  <!-- Financial Breakdown Section -->
+  <rect x="250" y="450" width="900" height="320" rx="10" ry="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="280" y="490" font-family="Arial" font-size="20" font-weight="bold" fill="#333333">Financial Health Components</text>
+  
+  <!-- Component Cards -->
+  <!-- Spending Health -->
+  <rect x="280" y="520" width="250" height="100" rx="8" ry="8" fill="#F1F8E9" stroke="#AED581" stroke-width="1"/>
+  <text x="300" y="550" font-family="Arial" font-size="18" font-weight="bold" fill="#558B2F">Spending</text>
+  <text x="300" y="580" font-family="Arial" font-size="28" font-weight="bold" fill="#333333">82/100</text>
+  <text x="400" y="580" font-family="Arial" font-size="16" fill="#558B2F">Excellent</text>
+  <text x="300" y="600" font-family="Arial" font-size="14" fill="#666666">Monthly expenses: $600.30</text>
+  
+  <!-- Savings Health -->
+  <rect x="550" y="520" width="250" height="100" rx="8" ry="8" fill="#E3F2FD" stroke="#90CAF9" stroke-width="1"/>
+  <text x="570" y="550" font-family="Arial" font-size="18" font-weight="bold" fill="#1565C0">Savings</text>
+  <text x="570" y="580" font-family="Arial" font-size="28" font-weight="bold" fill="#333333">75/100</text>
+  <text x="670" y="580" font-family="Arial" font-size="16" fill="#1565C0">Good</text>
+  <text x="570" y="600" font-family="Arial" font-size="14" fill="#666666">Emergency fund: 10.2 months</text>
+  
+  <!-- Debt Health -->
+  <rect x="820" y="520" width="250" height="100" rx="8" ry="8" fill="#FFF3E0" stroke="#FFCC80" stroke-width="1"/>
+  <text x="840" y="550" font-family="Arial" font-size="18" font-weight="bold" fill="#E65100">Debt</text>
+  <text x="840" y="580" font-family="Arial" font-size="28" font-weight="bold" fill="#333333">65/100</text>
+  <text x="940" y="580" font-family="Arial" font-size="16" fill="#E65100">Fair</text>
+  <text x="840" y="600" font-family="Arial" font-size="14" fill="#666666">DTI Ratio: 39.1%</text>
+  
+  <!-- Protection Health -->
+  <rect x="280" y="640" width="250" height="100" rx="8" ry="8" fill="#F3E5F5" stroke="#CE93D8" stroke-width="1"/>
+  <text x="300" y="670" font-family="Arial" font-size="18" font-weight="bold" fill="#7B1FA2">Protection</text>
+  <text x="300" y="700" font-family="Arial" font-size="28" font-weight="bold" fill="#333333">90/100</text>
+  <text x="400" y="700" font-family="Arial" font-size="16" fill="#7B1FA2">Excellent</text>
+  <text x="300" y="720" font-family="Arial" font-size="14" fill="#666666">Insurance coverage complete</text>
+  
+  <!-- Credit Health -->
+  <rect x="550" y="640" width="250" height="100" rx="8" ry="8" fill="#ECEFF1" stroke="#B0BEC5" stroke-width="1"/>
+  <text x="570" y="670" font-family="Arial" font-size="18" font-weight="bold" fill="#455A64">Credit</text>
+  <text x="570" y="700" font-family="Arial" font-size="28" font-weight="bold" fill="#333333">73/100</text>
+  <text x="670" y="700" font-family="Arial" font-size="16" fill="#455A64">Good</text>
+  <text x="570" y="720" font-family="Arial" font-size="14" fill="#666666">Credit card score: 26.1/100</text>
+  
+  <!-- Recommendations -->
+  <rect x="820" y="640" width="250" height="100" rx="8" ry="8" fill="#E8EAF6" stroke="#9FA8DA" stroke-width="1"/>
+  <text x="840" y="670" font-family="Arial" font-size="18" font-weight="bold" fill="#3949AB">Recommendations</text>
+  <circle cx="850" cy="690" r="5" fill="#3949AB"/>
+  <text x="865" y="695" font-family="Arial" font-size="14" fill="#333333">Open an Investment Account</text>
+  <circle cx="850" cy="715" r="5" fill="#3949AB"/>
+  <text x="865" y="720" font-family="Arial" font-size="14" fill="#333333">Reduce credit utilization to &lt;30%</text>
+</svg>

@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#F5F7FA"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="70" fill="#0066CC"/>
+  <text x="30" y="45" font-family="Arial" font-size="24" font-weight="bold" fill="white">RecomMind AI</text>
+  
+  <!-- User profile area -->
+  <circle cx="1140" cy="35" r="25" fill="#FFFFFF"/>
+  <text x="1140" y="42" font-family="Arial" font-size="20" text-anchor="middle" fill="#0066CC">SJ</text>
+  <text x="1070" y="42" font-family="Arial" font-size="16" fill="white">Sarah Johnson</text>
+  
+  <!-- Left Navigation -->
+  <rect x="0" y="70" width="220" height="730" fill="#FFFFFF"/>
+  <rect x="0" y="140" width="220" height="50" fill="#E6F0FF"/>
+  <rect x="0" y="140" width="5" height="50" fill="#0066CC"/>
+  
+  <!-- Navigation items -->
+  <text x="20" y="120" font-family="Arial" font-size="16" fill="#666666">MENU</text>
+  <text x="30" y="173" font-family="Arial" font-size="16" font-weight="bold" fill="#0066CC">Dashboard</text>
+  <text x="30" y="223" font-family="Arial" font-size="16" fill="#666666">Accounts</text>
+  <text x="30" y="273" font-family="Arial" font-size="16" fill="#666666">Financial Health</text>
+  <text x="30" y="323" font-family="Arial" font-size="16" fill="#666666">Products</text>
+  <text x="30" y="373" font-family="Arial" font-size="16" fill="#666666">Transactions</text>
+  <text x="30" y="423" font-family="Arial" font-size="16" fill="#666666">Goals</text>
+  <text x="30" y="473" font-family="Arial" font-size="16" fill="#666666">Settings</text>
+  
+  <!-- Main Content Area -->
+  
+  <!-- Welcome section -->
+  <rect x="250" y="100" width="920" height="100" rx="10" ry="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="280" y="140" font-family="Arial" font-size="24" font-weight="bold" fill="#333333">Welcome back, Sarah!</text>
+  <text x="280" y="170" font-family="Arial" font-size="16" fill="#666666">Your financial health score is 78/100. You've improved by 5 points since last month.</text>
+  
+  <!-- Financial summary cards -->
+  <rect x="250" y="220" width="290" height="150" rx="10" ry="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="280" y="260" font-family="Arial" font-size="18" font-weight="bold" fill="#333333">Checking</text>
+  <text x="280" y="290" font-family="Arial" font-size="24" font-weight="bold" fill="#333333">$1,942.04</text>
+  <text x="280" y="320" font-family="Arial" font-size="14" fill="#666666">Last transaction: Apr 21, 2025</text>
+  <rect x="280" y="340" width="100" height="10" rx="5" ry="5" fill="#E0E0E0"/>
+  <rect x="280" y="340" width="60" height="10" rx="5" ry="5" fill="#4CAF50"/>
+  
+  <rect x="565" y="220" width="290" height="150" rx="10" ry="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="595" y="260" font-family="Arial" font-size="18" font-weight="bold" fill="#333333">Savings</text>
+  <text x="595" y="290" font-family="Arial" font-size="24" font-weight="bold" fill="#333333">$6,140.57</text>
+  <text x="595" y="320" font-family="Arial" font-size="14" fill="#666666">Goal progress: 61%</text>
+  <rect x="595" y="340" width="100" height="10" rx="5" ry="5" fill="#E0E0E0"/>
+  <rect x="595" y="340" width="61" height="10" rx="5" ry="5" fill="#2196F3"/>
+  
+  <rect x="880" y="220" width="290" height="150" rx="10" ry="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="910" y="260" font-family="Arial" font-size="18" font-weight="bold" fill="#333333">Total Debt</text>
+  <text x="910" y="290" font-family="Arial" font-size="24" font-weight="bold" fill="#333333">$135,351.80</text>
+  <text x="910" y="320" font-family="Arial" font-size="14" fill="#666666">DTI Ratio: 39.1%</text>
+  <rect x="910" y="340" width="100" height="10" rx="5" ry="5" fill="#E0E0E0"/>
+  <rect x="910" y="340" width="39" height="10" rx="5" ry="5" fill="#FF9800"/>
+  
+  <!-- Financial Health Panel -->
+  <rect x="250" y="390" width="600" height="380" rx="10" ry="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="280" y="430" font-family="Arial" font-size="20" font-weight="bold" fill="#333333">Financial Health Assessment</text>
+  
+  <!-- Health Score circle -->
+  <circle cx="380" cy="530" r="80" fill="none" stroke="#E0E0E0" stroke-width="10"/>
+  <path d="M 380 450 A 80 80 0 0 1 457 553" fill="none" stroke="#4CAF50" stroke-width="10"/>
+  <text x="380" y="520" font-family="Arial" font-size="36" font-weight="bold" text-anchor="middle" fill="#333333">78</text>
+  <text x="380" y="550" font-family="Arial" font-size="16" text-anchor="middle" fill="#666666">Health Score</text>
+  
+  <!-- Health categories -->
+  <text x="500" y="480" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">Spending: 82/100</text>
+  <rect x="500" y="490" width="300" height="10" rx="5" ry="5" fill="#E0E0E0"/>
+  <rect x="500" y="490" width="246" height="10" rx="5" ry="5" fill="#4CAF50"/>
+  
+  <text x="500" y="530" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">Savings: 75/100</text>
+  <rect x="500" y="540" width="300" height="10" rx="5" ry="5" fill="#E0E0E0"/>
+  <rect x="500" y="540" width="225" height="10" rx="5" ry="5" fill="#2196F3"/>
+  
+  <text x="500" y="580" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">Debt: 65/100</text>
+  <rect x="500" y="590" width="300" height="10" rx="5" ry="5" fill="#E0E0E0"/>
+  <rect x="500" y="590" width="195" height="10" rx="5" ry="5" fill="#FF9800"/>
+  
+  <text x="500" y="630" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">Protection: 90/100</text>
+  <rect x="500" y="640" width="300" height="10" rx="5" ry="5" fill="#E0E0E0"/>
+  <rect x="500" y="640" width="270" height="10" rx="5" ry="5" fill="#9C27B0"/>
+  
+  <text x="500" y="680" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">Credit: 73/100</text>
+  <rect x="500" y="690" width="300" height="10" rx="5" ry="5" fill="#E0E0E0"/>
+  <rect x="500" y="690" width="219" height="10" rx="5" ry="5" fill="#607D8B"/>
+  
+  <!-- Product Recommendations and Life Events Panel -->
+  <rect x="870" y="390" width="300" height="380" rx="10" ry="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="900" y="430" font-family="Arial" font-size="20" font-weight="bold" fill="#333333">Personalized For You</text>
+  
+  <!-- Life Event Card -->
+  <rect x="890" y="460" width="260" height="100" rx="8" ry="8" fill="#E8F5E9" stroke="#81C784" stroke-width="1"/>
+  <text x="910" y="490" font-family="Arial" font-size="16" font-weight="bold" fill="#2E7D32">We've detected: Home Purchase?</text>
+  <text x="910" y="520" font-family="Arial" font-size="14" fill="#333333">Your recent activity suggests you might be looking to buy a home. We can help with that!</text>
+  <rect x="910" y="540" width="100" height="30" rx="15" ry="15" fill="#4CAF50"/>
+  <text x="960" y="560" font-family="Arial" font-size="14" text-anchor="middle" fill="white">Learn More</text>
+  
+  <!-- Recommendation Card 1 -->
+  <rect x="890" y="580" width="260" height="80" rx="8" ry="8" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="910" y="610" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">Investment Account</text>
+  <text x="910" y="630" font-family="Arial" font-size="14" fill="#666666">Start growing your wealth with our recommended investment options.</text>
+  
+  <!-- Recommendation Card 2 -->
+  <rect x="890" y="680" width="260" height="80" rx="8" ry="8" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="910" y="710" font-family="Arial" font-size="16" font-weight="bold" fill="#333333">Mortgage Pre-approval</text>
+  <text x="910" y="730" font-family="Arial" font-size="14" fill="#666666">Get ready for your home purchase with a pre-approved mortgage.</text>
+</svg>

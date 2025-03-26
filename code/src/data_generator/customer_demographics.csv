@@ -1,0 +1,101 @@
+customer_id,name,age,gender,income,education,marital_status,family_size,homeownership,occupation,tenure_years
+1001,Maria Hughes,29,Female,35587,High School,Married,3,Owner,Manufacturing,6.7
+1002,Jacqueline Nguyen,29,Male,54464,Master,Married,1,Owner,Healthcare,6.2
+1003,Kelly Young,40,Male,65389,Bachelor,Single,3,Owner,Technology,9.3
+1004,Lauren Morris,52,Female,15000,Master,Married,1,Living with Family,Education,9.3
+1005,Gloria Hall,22,Female,23609,Bachelor,Single,4,Renter,Retired,6.9
+1006,Judith Edwards,45,Female,15000,High School,Married,1,Owner,Technology,8.3
+1007,Samantha Thomas,38,Male,407198,High School,Married,2,Renter,Service,6.8
+1008,Daniel Kim,34,Female,15000,Associate,Married,6,Owner,Professional,16.9
+1009,Marie Johnson,51,Female,15000,Bachelor,Single,5,Renter,Sales,6.2
+1010,Laura Gray,20,Female,29629,Associate,Married,1,Living with Family,Sales,8.7
+1011,Megan Stewart,34,Male,15000,High School,Married,1,Renter,Retired,15.4
+1012,Johnny Green,64,Male,85804,Master,Single,2,Living with Family,Retired,5.6
+1013,Amber Phillips,47,Male,183959,Master,Married,2,Owner,Student,8.6
+1014,Brenda Robinson,30,Female,15000,Associate,Single,4,Owner,Healthcare,7.9
+1015,Amy Ross,38,Male,135956,Master,Married,4,Renter,Administrative,6.1
+1016,Jean Sanchez,38,Female,29170,High School,Married,1,Owner,Student,12.2
+1017,Michael Jackson,42,Male,40628,Bachelor,Married,4,Renter,Professional,7.2
+1018,Joyce Morgan,18,Female,83958,Associate,Single,3,Owner,Healthcare,5.8
+1019,Linda Myers,60,Male,133354,Bachelor,Divorced,2,Living with Family,Student,5.6
+1020,Christina Kelly,71,Male,18497,Bachelor,Married,3,Owner,Service,5.8
+1021,Frances Ward,47,Male,54377,Bachelor,Divorced,1,Owner,Administrative,5.1
+1022,Douglas Price,37,Female,34414,Associate,Single,4,Owner,Self-employed,5.3
+1023,Sophia Martin,58,Male,62348,Master,Married,4,Owner,Student,6.7
+1024,Gerald Ramos,55,Female,15000,Bachelor,Single,3,Renter,Service,8.9
+1025,Billy Wright,29,Male,15000,Master,Single,2,Living with Family,Healthcare,7.4
+1026,Dennis Walker,64,Male,202077,High School,Widowed,3,Renter,Retired,5.2
+1027,Beverly Ramirez,18,Male,63867,Bachelor,Married,2,Owner,Self-employed,8.1
+1028,Edward Reyes,30,Male,15000,Bachelor,Widowed,1,Owner,Manufacturing,2.9
+1029,Joan Peterson,56,Male,41708,High School,Single,1,Owner,Student,6.1
+1030,Mary Mitchell,32,Female,131730,Bachelor,Single,5,Renter,Education,3.2
+1031,Julia Evans,30,Female,24735,High School,Single,2,Living with Family,Professional,10.2
+1032,Lisa Watson,33,Male,56761,Master,Widowed,1,Renter,Manufacturing,7.4
+1033,Helen Alvarez,52,Female,44157,Bachelor,Single,3,Owner,Education,12.8
+1034,Diane Rogers,18,Female,223460,Master,Married,1,Renter,Healthcare,10.4
+1035,Doris James,19,Male,77755,High School,Single,3,Owner,Manufacturing,12.7
+1036,Cheryl Hill,55,Male,180212,Associate,Married,4,Renter,Manufacturing,17.0
+1037,Ann Cox,36,Female,33456,High School,Single,4,Living with Family,Professional,5.8
+1038,Gregory Gutierrez,40,Male,19902,Bachelor,Married,4,Owner,Manufacturing,10.2
+1039,Christine Patel,57,Female,31238,Bachelor,Single,1,Renter,Student,5.6
+1040,Benjamin White,32,Male,50146,Bachelor,Single,2,Owner,Student,5.9
+1041,Keith Castillo,23,Male,15000,PhD,Married,5,Renter,Retired,10.2
+1042,Katherine Lewis,49,Male,66754,High School,Single,2,Owner,Retired,3.0
+1043,Angela Ruiz,32,Male,19609,Bachelor,Married,1,Renter,Student,9.7
+1044,Catherine Long,20,Male,34669,Master,Married,4,Owner,Retired,10.5
+1045,Evelyn Mendoza,25,Female,15000,High School,Single,3,Owner,Sales,4.4
+1046,Philip Davis,22,Male,52718,Associate,Married,1,Owner,Professional,10.5
+1047,Christian Cooper,33,Female,42961,Master,Married,1,Renter,Education,6.7
+1048,Ashley Jimenez,62,Male,15136,Bachelor,Married,5,Renter,Manufacturing,7.6
+1049,Vincent Foster,29,Female,146923,Associate,Widowed,2,Owner,Administrative,5.5
+1050,Isabella King,42,Male,241103,Bachelor,Single,3,Living with Family,Technology,8.2
+1051,Debra Ortiz,57,Female,34340,Associate,Married,3,Owner,Education,10.9
+1052,Natalie Lopez,40,Male,15000,PhD,Married,4,Renter,Professional,7.9
+1053,Jacob Flores,52,Male,56056,Bachelor,Single,1,Owner,Professional,15.7
+1054,Jeremy Garcia,36,Female,111875,Bachelor,Single,1,Owner,Technology,6.7
+1055,Charlotte Perez,36,Female,15000,Associate,Single,3,Owner,Manufacturing,3.7
+1056,Virginia Thompson,56,Female,81381,Master,Widowed,3,Owner,Manufacturing,6.9
+1057,Kayla Clark,57,Male,15000,Master,Married,1,Owner,Retired,11.8
+1058,Ryan Bailey,55,Female,25138,Master,Single,1,Renter,Healthcare,7.7
+1059,Bruce Brooks,55,Female,94450,High School,Divorced,1,Renter,Retired,9.3
+1060,Marilyn Martinez,36,Female,53598,Bachelor,Single,3,Owner,Sales,2.8
+1061,Samuel Campbell,56,Male,98002,Associate,Single,4,Renter,Student,8.0
+1062,Alexis Smith,32,Male,46080,Bachelor,Married,2,Renter,Healthcare,11.9
+1063,Kathryn Nelson,54,Female,34284,Master,Married,3,Owner,Manufacturing,4.5
+1064,Rachel Richardson,50,Female,45733,Bachelor,Widowed,3,Living with Family,Healthcare,11.6
+1065,Heather Bennett,38,Male,23704,Bachelor,Single,2,Owner,Manufacturing,15.4
+1066,Christopher Murphy,52,Male,15000,Bachelor,Married,1,Renter,Professional,10.5
+1067,John Reed,37,Non-binary,15000,Bachelor,Single,3,Renter,Retired,5.2
+1068,Dylan Hernandez,42,Male,103898,Bachelor,Single,1,Renter,Student,10.4
+1069,Sara Sanders,42,Female,126130,Master,Married,3,Owner,Technology,5.2
+1070,Tyler Harris,22,Female,253849,Bachelor,Single,1,Renter,Self-employed,11.4
+1071,Emily Carter,33,Female,104138,Bachelor,Married,3,Renter,Service,7.1
+1072,Patricia Miller,18,Female,67993,Bachelor,Married,2,Owner,Sales,5.5
+1073,Abigail Baker,45,Male,92440,Master,Single,2,Owner,Professional,7.1
+1074,Jerry Torres,56,Male,56332,Master,Married,1,Living with Family,Administrative,10.4
+1075,Alexander Collins,38,Female,59410,High School,Single,1,Renter,Professional,1.3
+1076,Diana Anderson,52,Female,38000,Bachelor,Married,3,Living with Family,Student,4.6
+1077,Terry Howard,33,Female,15000,Bachelor,Single,2,Owner,Administrative,9.0
+1078,Aaron Williams,40,Male,57445,Bachelor,Single,2,Renter,Healthcare,6.4
+1079,Cathy Adams,31,Male,121448,High School,Divorced,2,Living with Family,Education,5.6
+1080,Thomas Turner,25,Female,65467,Bachelor,Divorced,1,Owner,Education,2.7
+1081,Raymond Gonzalez,26,Non-binary,150141,High School,Divorced,1,Owner,Technology,4.9
+1082,Larry Jones,52,Female,103630,Bachelor,Single,1,Owner,Sales,5.5
+1083,Judy Cook,36,Male,110343,Master,Single,3,Owner,Self-employed,6.2
+1084,Teresa Chavez,32,Male,35285,High School,Single,3,Owner,Technology,4.6
+1085,Martha Taylor,31,Male,15000,Associate,Married,2,Renter,Student,6.9
+1086,Alan Rodriguez,23,Male,381476,Bachelor,Single,1,Renter,Technology,8.2
+1087,Kimberly Wilson,36,Female,102435,High School,Married,3,Renter,Technology,7.9
+1088,Nancy Allen,50,Female,15000,High School,Single,1,Owner,Administrative,7.7
+1089,Nicholas Scott,18,Male,60494,Bachelor,Single,2,Owner,Student,5.9
+1090,Russell Wood,42,Female,31010,Master,Married,5,Owner,Self-employed,3.4
+1091,Matthew Rivera,58,Male,16385,Bachelor,Married,1,Living with Family,Professional,8.1
+1092,Brian Brown,18,Male,15000,Bachelor,Single,1,Owner,Sales,4.3
+1093,Pamela Roberts,42,Non-binary,254964,PhD,Divorced,1,Living with Family,Manufacturing,12.8
+1094,Nicole Moore,44,Female,29490,Master,Single,2,Renter,Service,8.7
+1095,Ethan Lee,34,Male,23235,Bachelor,Married,5,Owner,Service,8.4
+1096,Mark Hernandez,18,Female,23679,Master,Single,4,Owner,Professional,5.2
+1097,Olivia Morgan,46,Female,15000,Bachelor,Married,1,Renter,Healthcare,7.6
+1098,Paul Thomas,45,Male,146614,Associate,Single,1,Renter,Administrative,4.1
+1099,Cynthia Cook,31,Female,15000,Bachelor,Widowed,5,Owner,Education,5.9
+1100,Anna Gutierrez,34,Female,136314,Master,Single,2,Owner,Administrative,1.9

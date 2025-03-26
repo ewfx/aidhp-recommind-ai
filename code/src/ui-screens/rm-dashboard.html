@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RecomMind AI - RM Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .sidebar {
+      background-color: #0d3b66;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      padding-top: 20px;
+    }
+    .sidebar .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 5px;
+    }
+    .sidebar .nav-link:hover, .sidebar .nav-link.active {
+      color: white;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    .sidebar .nav-link i {
+      margin-right: 10px;
+    }
+    .main-content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      border: none;
+    }
+    .card-header {
+      background-color: white;
+      border-bottom: 1px solid #f0f0f0;
+      font-weight: 600;
+    }
+    .customer-card {
+      transition: all 0.3s;
+    }
+    .customer-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    }
+    .recommendation-badge {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+    }
+    .opportunity-score-high {
+      color: #28a745;
+    }
+    .opportunity-score-medium {
+      color: #ffc107;
+    }
+    .opportunity-score-low {
+      color: #dc3545;
+    }
+    .notification-counter {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      font-size: 0.7rem;
+    }
+    .search-box {
+      position: relative;
+    }
+    .search-box i {
+      position: absolute;
+      top: 12px;
+      left: 15px;
+      color: #999;
+    }
+    .search-box input {
+      padding-left: 40px;
+      border-radius: 20px;
+    }
+    .dashboard-header {
+      background-color: white;
+      padding: 15px 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-auto sidebar py-3 d-flex flex-column" style="width: 250px;">
+        <div class="d-flex justify-content-center mb-4">
+          <h4>RecomMind AI</h4>
+        </div>
+        <div class="px-3 mb-4">
+          <div class="d-flex align-items-center">
+            <img src="/api/placeholder/50/50" class="rounded-circle me-2" alt="Profile Picture">
+            <div>
+              <div class="fw-bold">Sarah Johnson</div>
+              <div class="small">Relationship Manager</div>
+            </div>
+          </div>
+        </div>
+        <ul class="nav flex-column px-2">
+          <li class="nav-item">
+            <a class="nav-link active rounded" href="#">
+              <i class="fas fa-th-large"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded" href="#">
+              <i class="fas fa-users"></i> Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded" href="#">
+              <i class="fas fa-lightbulb"></i> Recommendations
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded" href="#">
+              <i class="fas fa-chart-line"></i> Performance
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded" href="#">
+              <i class="fas fa-calendar"></i> Meetings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link rounded" href="#">
+              <i class="fas fa-cog"></i> Settings
+            </a>
+          </li>
+        </ul>
+        <div class="mt-auto px-3 mb-3">
+          <a class="nav-link rounded" href="#">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div class="col main-content">
+        <!-- Header with search and notifications -->
+        <div class="row dashboard-header align-items-center">
+          <div class="col-md-6">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" class="form-control" placeholder="Search customers, products...">
+            </div>
+          </div>
+          <div class="col-md-6 text-end">
+            <div class="d-inline-block me-3 position-relative">
+              <i class="fas fa-bell fs-5"></i>
+              <span class="position-absolute notification-counter badge rounded-pill bg-danger">3</span>
+            </div>
+            <div class="d-inline-block me-3">
+              <i class="fas fa-envelope fs-5"></i>
+            </div>
+            <div class="d-inline-block">
+              <button class="btn btn-outline-primary">
+                <i class="fas fa-plus me-2"></i>New Meeting
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dashboard Content -->
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <h4>RM Dashboard</h4>
+            <p class="text-muted">Welcome back, Sarah! Here's what's happening with your customers today.</p>
+          </div>
+        </div>
+        
+        <!-- KPI Cards -->
+        <div class="row mb-4">
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="text-muted mb-2">Total Customers</h6>
+                <div class="d-flex align-items-center">
+                  <h3 class="mb-0 me-3">253</h3>
+                  <span class="badge bg-success">+5%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="text-muted mb-2">Active Opportunities</h6>
+                <div class="d-flex align-items-center">
+                  <h3 class="mb-0 me-3">42</h3>
+                  <span class="badge bg-primary">12 New</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="text-muted mb-2">Portfolio Value</h6>
+                <div class="d-flex align-items-center">
+                  <h3 class="mb-0 me-3">$85.2M</h3>
+                  <span class="badge bg-success">+3.2%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="text-muted mb-2">AI Recommendations</h6>
+                <div class="d-flex align-items-center">
+                  <h3 class="mb-0 me-3">18</h3>
+                  <span class="badge bg-warning">8 Urgent</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Charts Row -->
+        <div class="row mb-4">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div>Customer Portfolio Overview</div>
+                <div>
+                  <select class="form-select form-select-sm" style="width: 140px;">
+                    <option>Last 30 Days</option>
+                    <option>Last Quarter</option>
+                    <option>Year to Date</option>
+                  </select>
+                </div>
+              </div>
+              <div class="card-body">
+                <canvas id="portfolioChart" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-header">
+                Opportunity Distribution
+              </div>
+              <div class="card-body">
+                <canvas id="opportunityChart" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Priority Customers with AI Recommendations -->
+        <div class="row mb-4">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header d-flex justify-content-between align-items-center">
+                <div>Priority Customers</div>
+                <div>
+                  <button class="btn btn-sm btn-outline-secondary me-2">
+                    <i class="fas fa-filter me-1"></i>Filter
+                  </button>
+                  <button class="btn btn-sm btn-outline-secondary">
+                    <i class="fas fa-sort me-1"></i>Sort
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="card customer-card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                          <div>
+                            <h5 class="mb-1">Global Tech Solutions Inc.</h5>
+                            <div class="text-muted small">Tech & Manufacturing • Customer since 2020</div>
+                          </div>
+                          <div>
+                            <div class="badge bg-success recommendation-badge">
+                              <i class="fas fa-arrow-up me-1"></i>High Priority
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-6">
+                            <div class="small text-muted">Portfolio Value</div>
+                            <div class="fw-bold">$4.8M</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="small text-muted">Opportunity Score</div>
+                            <div class="fw-bold opportunity-score-high">92/100 <i class="fas fa-arrow-up"></i></div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <div class="small text-muted mb-1">AI Recommendations:</div>
+                          <ul class="list-unstyled">
+                            <li class="mb-2">
+                              <i class="fas fa-lightbulb text-warning me-2"></i>
+                              Cash flow management solution needed (92% confidence)
+                            </li>
+                            <li>
+                              <i class="fas fa-chart-line text-primary me-2"></i>
+                              Expansion opportunity for international payments (87% confidence)
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <div class="d-flex justify-content-between">
+                            <button class="btn btn-sm btn-primary me-2">Take Action</button>
+                            <button class="btn btn-sm btn-outline-secondary">View Details</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="card customer-card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                          <div>
+                            <h5 class="mb-1">Riverside Healthcare Group</h5>
+                            <div class="text-muted small">Healthcare • Customer since 2018</div>
+                          </div>
+                          <div>
+                            <div class="badge bg-warning recommendation-badge">
+                              <i class="fas fa-exclamation me-1"></i>Attention Needed
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-6">
+                            <div class="small text-muted">Portfolio Value</div>
+                            <div class="fw-bold">$3.2M</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="small text-muted">Opportunity Score</div>
+                            <div class="fw-bold opportunity-score-medium">74/100 <i class="fas fa-minus"></i></div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <div class="small text-muted mb-1">AI Recommendations:</div>
+                          <ul class="list-unstyled">
+                            <li class="mb-2">
+                              <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                              Retention risk - competitor outreach detected (78% confidence)
+                            </li>
+                            <li>
+                              <i class="fas fa-lightbulb text-primary me-2"></i>
+                              Suggest credit line increase based on growth patterns (85% confidence)
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <div class="d-flex justify-content-between">
+                            <button class="btn btn-sm btn-primary me-2">Take Action</button>
+                            <button class="btn btn-sm btn-outline-secondary">View Details</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="card customer-card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                          <div>
+                            <h5 class="mb-1">Northern Logistics Partners</h5>
+                            <div class="text-muted small">Transportation • Customer since 2021</div>
+                          </div>
+                          <div>
+                            <div class="badge bg-info recommendation-badge">
+                              <i class="fas fa-lightbulb me-1"></i>New Opportunity
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-6">
+                            <div class="small text-muted">Portfolio Value</div>
+                            <div class="fw-bold">$1.7M</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="small text-muted">Opportunity Score</div>
+                            <div class="fw-bold opportunity-score-high">88/100 <i class="fas fa-arrow-up"></i></div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <div class="small text-muted mb-1">AI Recommendations:</div>
+                          <ul class="list-unstyled">
+                            <li class="mb-2">
+                              <i class="fas fa-lightbulb text-primary me-2"></i>
+                              Equipment financing opportunity detected (91% confidence)
+                            </li>
+                            <li>
+                              <i class="fas fa-chart-pie text-success me-2"></i>
+                              Cross-sell treasury management services (84% confidence)
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <div class="d-flex justify-content-between">
+                            <button class="btn btn-sm btn-primary me-2">Take Action</button>
+                            <button class="btn btn-sm btn-outline-secondary">View Details</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="card customer-card">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between mb-3">
+                          <div>
+                            <h5 class="mb-1">Coastal Real Estate Ventures</h5>
+                            <div class="text-muted small">Real Estate • Customer since 2019</div>
+                          </div>
+                          <div>
+                            <div class="badge bg-danger recommendation-badge">
+                              <i class="fas fa-exclamation-circle me-1"></i>Urgent Action
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <div class="col-6">
+                            <div class="small text-muted">Portfolio Value</div>
+                            <div class="fw-bold">$5.6M</div>
+                          </div>
+                          <div class="col-6">
+                            <div class="small text-muted">Opportunity Score</div>
+                            <div class="fw-bold opportunity-score-low">61/100 <i class="fas fa-arrow-down"></i></div>
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <div class="small text-muted mb-1">AI Recommendations:</div>
+                          <ul class="list-unstyled">
+                            <li class="mb-2">
+                              <i class="fas fa-exclamation-circle text-danger me-2"></i>
+                              Liquidity concerns detected - schedule urgent meeting (94% confidence)
+                            </li>
+                            <li>
+                              <i class="fas fa-tools text-secondary me-2"></i>
+                              Loan restructuring opportunity to improve cash flow (89% confidence)
+                            </li>
+                          </ul>
+                        </div>
+                        <div>
+                          <div class="d-flex justify-content-between">
+                            <button class="btn btn-sm btn-danger me-2">Urgent Action</button>
+                            <button class="btn btn-sm btn-outline-secondary">View Details</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center mt-2">
+                  <button class="btn btn-outline-primary">View All Customers</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Recent Activities and Upcoming Tasks -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                Recent Activities
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item px-0 py-2 border-0">
+                    <div class="d-flex">
+                      <div class="me-3">
+                        <div class="bg-success bg-opacity-25 rounded-circle p-2">
+                          <i class="fas fa-check text-success"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="fw-bold">Meeting completed with Global Tech Solutions</div>
+                        <div class="small text-muted">Today, 10:30 AM</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item px-0 py-2 border-0">
+                    <div class="d-flex">
+                      <div class="me-3">
+                        <div class="bg-primary bg-opacity-25 rounded-circle p-2">
+                          <i class="fas fa-paper-plane text-primary"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="fw-bold">Proposal sent to Northern Logistics Partners</div>
+                        <div class="small text-muted">Yesterday, 3:45 PM</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item px-0 py-2 border-0">
+                    <div class="d-flex">
+                      <div class="me-3">
+                        <div class="bg-warning bg-opacity-25 rounded-circle p-2">
+                          <i class="fas fa-lightbulb text-warning"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="fw-bold">New recommendation for Riverside Healthcare</div>
+                        <div class="small text-muted">Yesterday, 1:15 PM</div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item px-0 py-2 border-0">
+                    <div class="d-flex">
+                      <div class="me-3">
+                        <div class="bg-info bg-opacity-25 rounded-circle p-2">
+                          <i class="fas fa-phone text-info"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="fw-bold">Call with Coastal Real Estate Ventures</div>
+                        <div class="small text-muted">March 22, 11:00 AM</div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-center mt-2">
+                  <a href="#" class="btn btn-sm btn-link">View All Activities</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-header">
+                Upcoming Tasks
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item px-0 py-2 border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="me-3 form-check">
+                        <input class="form-check-input" type="checkbox" id="task1">
+                      </div>
+                      <div>
+                        <label class="fw-bold mb-0" for="task1">Prepare proposal for Global Tech Solutions</label>
+                        <div class="small text-muted">Due tomorrow, 5:00 PM</div>
+                      </div>
+                      <div class="ms-auto">
+                        <span class="badge bg-danger">High</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item px-0 py-2 border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="me-3 form-check">
+                        <input class="form-check-input" type="checkbox" id="task2">
+                      </div>
+                      <div>
+                        <label class="fw-bold mb-0" for="task2">Follow up with Northern Logistics on proposal</label>
+                        <div class="small text-muted">Due March 26, 12:00 PM</div>
+                      </div>
+                      <div class="ms-auto">
+                        <span class="badge bg-warning">Medium</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item px-0 py-2 border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="me-3 form-check">
+                        <input class="form-check-input" type="checkbox" id="task3">
+                      </div>
+                      <div>
+                        <label class="fw-bold mb-0" for="task3">Schedule urgent meeting with Coastal Real Estate</label>
+                        <div class="small text-muted">Due today, 4:00 PM</div>
+                      </div>
+                      <div class="ms-auto">
+                        <span class="badge bg-danger">Urgent</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item px-0 py-2 border-0">
+                    <div class="d-flex align-items-center">
+                      <div class="me-3 form-check">
+                        <input class="form-check-input" type="checkbox" id="task4">
+                      </div>
+                      <div>
+                        <label class="fw-bold mb-0" for="task4">Review quarterly performance metrics</label>
+                        <div class="small text-muted">Due March 28, 10:00 AM</div>
+                      </div>
+                      <div class="ms-auto">
+                        <span class="badge bg-info">Normal</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="text-center mt-2">
+                  <a href="#" class="btn btn-sm btn-link">View All Tasks</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script>
+    // Portfolio Chart
+    const portfolioCtx = document.getElementById('portfolioChart').getContext('2d');
+    const portfolioChart = new Chart(portfolioCtx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
+        datasets: [{
+          label: 'Portfolio Value',
+          data: [65, 69, 72, 78, 82, 80, 83, 85, 88],
+          borderColor: '#0d6efd',
+          backgroundColor: 'rgba(13, 110, 253, 0.1)',
+          tension: 0.3,
+          fill: true
+        }, {
+          label: 'Customer Acquisition',
+          data: [220, 228, 235, 240, 245, 250, 248, 252, 258],
+          borderColor: '#20c997',
+          backgroundColor: 'transparent',
+          tension: 0.3,
+          borderDash: [5, 5]
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'top',
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: false
+          }
+        }
+      }
+    });
+    
+    // Opportunity Chart
+    const opportunityCtx = document.getElementById('opportunityChart').getContext('2d');
+    const opportunityChart = new Chart(opportunityCtx, {
+      type: 'doughnut',
+      data: {
+        labels: ['High Priority', 'Medium Priority', 'Low Priority', 'No Action Needed'],
+        datasets: [{
+          data: [18, 14, 6, 4],
+          backgroundColor: [
+            '#198754',
+            '#ffc107',
+            '#dc3545',
+            '#6c757d'
+          ]
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        },
+        cutout: '70%'
+      }
+    });
+  </script>
+</body>
+</html>
