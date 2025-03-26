@@ -11,6 +11,16 @@ interface FileUploadState {
   description: string;
   uploaded: boolean;
   progress: number;
+  status: "pending" | "uploading" | "completed" | "error";
+}
+
+// Add this interface for the enhanced API response
+interface UploadResponse {
+  success: boolean;
+  message: string;
+  rows_imported?: number;
+  file_type?: string;
+  error?: string;
 }
 
 const DataUploadPage: React.FC = () => {
@@ -21,91 +31,147 @@ const DataUploadPage: React.FC = () => {
       description: "Basic customer information including age, location, occupation, and marital status",
       uploaded: false,
       progress: 0,
+      status: "pending",
     },
     {
       name: "financial_profiles.csv",
       description: "Customer financial details including income, credit score, and account balances",
       uploaded: false,
       progress: 0,
+      status: "pending",
     },
     {
       name: "life_events.csv",
       description: "Significant life events like marriage, job changes, or home purchases",
       uploaded: false,
       progress: 0,
+      status: "pending",
     },
     {
       name: "digital_engagement.csv",
       description: "Customer interaction data from digital channels and app usage",
       uploaded: false,
       progress: 0,
+      status: "pending",
     },
     {
       name: "offers_history.csv",
       description: "Historical data of offers made to customers and their responses",
       uploaded: false,
       progress: 0,
+      status: "pending",
     },
     {
       name: "transactions.csv",
       description: "Detailed transaction records including amounts, categories, and timestamps",
       uploaded: false,
       progress: 0,
+      status: "pending",
     },
   ]);
   const [isUploading, setIsUploading] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
+  const [totalFilesUploaded, setTotalFilesUploaded] = useState(0);
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>, fileIndex: number) => {
+  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>, fileIndex: number) => {
     const files = event.target.files;
     if (files && files[0]) {
       setIsUploading(true);
-      // Simulate file upload progress
-      let progress = 0;
-      const interval = setInterval(() => {
-        progress += 10;
+
+      try {
+        const formData = new FormData();
+        formData.append("file", files[0]);
+        const fileType = fileStates[fileIndex].name.replace(".csv", "");
+        formData.append("file_type", fileType);
+
+        // Update status to uploading
         setFileStates((prevStates) => {
           const newStates = [...prevStates];
           newStates[fileIndex] = {
             ...newStates[fileIndex],
-            progress: Math.min(progress, 100),
+            status: "uploading",
+            progress: 50, // Show 50% while uploading
           };
           return newStates;
         });
 
-        if (progress >= 100) {
-          clearInterval(interval);
+        const response = await fetch("/api/upload-csv", {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+          credentials: "include",
+        });
+
+        const result: UploadResponse = await response.json();
+
+        // Check if the response indicates success
+        if (response.status === 200) {
+          console.log(`Upload successful for ${fileType}:`, result);
+
+          // Update state to show completion
           setFileStates((prevStates) => {
             const newStates = [...prevStates];
             newStates[fileIndex] = {
               ...newStates[fileIndex],
               uploaded: true,
               progress: 100,
+              status: "completed",
             };
             return newStates;
           });
 
+          // Update total files uploaded
+          setTotalFilesUploaded((prev) => prev + 1);
+
           // Check if all files are uploaded
-          setFileStates((prevStates) => {
-            const allUploaded = prevStates.every((state) => state.uploaded);
-            if (allUploaded) {
-              setIsUploading(false);
-              setIsProcessing(true);
-              // Add a small delay before navigation to show completion
-              setTimeout(() => {
-                navigate("/rm-dashboard");
-              }, 1000);
-            }
-            return prevStates;
-          });
+          if (totalFilesUploaded + 1 === fileStates.length) {
+            setIsUploading(false);
+            setIsProcessing(true);
+            setTimeout(() => {
+              navigate("/rm-dashboard");
+            }, 1500);
+          }
+        } else {
+          // Handle unsuccessful response
+          throw new Error(result.message || `Upload failed: ${response.statusText}`);
         }
-      }, 500);
+      } catch (error) {
+        console.error("Upload error:", error);
+        setFileStates((prevStates) => {
+          const newStates = [...prevStates];
+          newStates[fileIndex] = {
+            ...newStates[fileIndex],
+            uploaded: false,
+            progress: 0,
+            status: "error",
+          };
+          return newStates;
+        });
+
+        alert(error instanceof Error ? error.message : "Failed to upload file. Please try again.");
+        setIsUploading(false);
+      }
     }
   };
 
   const getOverallProgress = () => {
-    const totalProgress = fileStates.reduce((acc, state) => acc + state.progress, 0);
-    return Math.round(totalProgress / fileStates.length);
+    // Calculate progress based on total files uploaded
+    return Math.round((totalFilesUploaded / fileStates.length) * 100);
+  };
+
+  const getFileCardStyle = (status: FileUploadState["status"]) => {
+    switch (status) {
+      case "completed":
+        return "border-green-200 bg-green-50";
+      case "uploading":
+        return "border-blue-200 bg-blue-50";
+      case "error":
+        return "border-red-200 bg-red-50";
+      default:
+        return "";
+    }
   };
 
   return (
@@ -117,6 +183,22 @@ const DataUploadPage: React.FC = () => {
             <p className="text-gray-600">Upload your customer data to get started with RecomMind AI</p>
           </div>
 
+          {/* Overall Progress Card - Always visible */}
+          <Card className="mb-8">
+            <CardContent className="pt-6">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium">Overall Upload Progress</span>
+                  <span className="text-sm text-gray-500">{getOverallProgress()}%</span>
+                </div>
+                <Progress value={getOverallProgress()} className="h-2" />
+                <p className="text-sm text-gray-500 text-center">
+                  {totalFilesUploaded} of {fileStates.length} files uploaded
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
           <Card className="mb-8">
             <CardHeader>
               <CardTitle>Required Files</CardTitle>
@@ -125,11 +207,11 @@ const DataUploadPage: React.FC = () => {
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {fileStates.map((fileState, index) => (
-                  <Card key={fileState.name} className="relative">
+                  <Card key={fileState.name} className={`relative transition-all duration-300 ${getFileCardStyle(fileState.status)}`}>
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center gap-3">
-                          <FileText className="h-5 w-5 text-blue-600" />
+                          <FileText className={`h-5 w-5 ${fileState.status === "completed" ? "text-green-600" : fileState.status === "error" ? "text-red-600" : "text-blue-600"}`} />
                           <h3 className="font-medium">{fileState.name}</h3>
                         </div>
                         <TooltipProvider>
@@ -144,20 +226,24 @@ const DataUploadPage: React.FC = () => {
                         </TooltipProvider>
                       </div>
                       <p className="text-sm text-gray-500 mb-4">CSV format, max 20MB</p>
-                      <div className="flex items-center gap-4">
-                        {fileState.uploaded ? (
+                      <div className="space-y-3">
+                        {fileState.status === "completed" ? (
                           <div className="flex items-center gap-2 text-green-600">
                             <CheckCircle2 className="h-5 w-5" />
-                            <span className="text-sm">Uploaded</span>
+                            <span className="text-sm font-medium">Upload Complete</span>
+                          </div>
+                        ) : fileState.status === "error" ? (
+                          <div className="flex items-center gap-2 text-red-600">
+                            <AlertCircle className="h-5 w-5" />
+                            <span className="text-sm font-medium">Upload Failed</span>
                           </div>
                         ) : (
                           <Button variant="outline" size="sm" className="relative w-full">
-                            <input type="file" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept=".csv" onChange={(e) => handleFileUpload(e, index)} />
+                            <input type="file" className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept=".csv" onChange={(e) => handleFileUpload(e, index)} disabled={fileState.status === "uploading"} />
                             <Upload className="h-4 w-4 mr-2" />
-                            Upload
+                            {fileState.status === "uploading" ? "Uploading..." : "Upload"}
                           </Button>
                         )}
-                        {fileState.progress > 0 && fileState.progress < 100 && <Progress value={fileState.progress} className="w-full h-2" />}
                       </div>
                     </CardContent>
                   </Card>
@@ -165,20 +251,6 @@ const DataUploadPage: React.FC = () => {
               </div>
             </CardContent>
           </Card>
-
-          {isUploading && (
-            <Card className="mb-8">
-              <CardContent className="pt-6">
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium">Overall Upload Progress</span>
-                    <span className="text-sm text-gray-500">{getOverallProgress()}%</span>
-                  </div>
-                  <Progress value={getOverallProgress()} className="h-2" />
-                </div>
-              </CardContent>
-            </Card>
-          )}
 
           {isProcessing && (
             <Card className="bg-blue-50 border-blue-200">
