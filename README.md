@@ -1,5 +1,7 @@
 # 🚀 Project Name
 
+RecomMind AI
+
 ## 📌 Table of Contents
 - [Introduction](#introduction)
 - [Demo](#demo)
@@ -14,11 +16,15 @@
 ---
 
 ## 🎯 Introduction
+
 A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
 
 ## 🎥 Demo
+
 🔗 [Live Demo](#) (if applicable)  
+
 📹 [Video Demo](#) (if applicable)  
+
 🖼️ Screenshots:
 
 ![Screenshot 1](link-to-image)
@@ -36,25 +42,13 @@ Briefly outline the technologies, frameworks, and tools used in development.
 Describe the major technical or non-technical challenges your team encountered.
 
 ## 🏃 How to Run
-1. Clone the repository  
-   ```sh
-   git clone https://github.com/your-repo.git
-   ```
-2. Install dependencies  
-   ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
-   ```
-3. Run the project  
-   ```sh
-   npm start  # or python app.py
-   ```
+
+
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Frontend: React
+- 🔹 Backend: FastAPI
+- 🔹 Database: PostgreSQL
 
 ## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+- **Bhagya Rana** - [GitHub](https://github.com/BhagyaRana) | [LinkedIn](https://www.linkedin.com/in/bhagyarana)
